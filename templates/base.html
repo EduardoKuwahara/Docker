@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='normalize.css')}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+    {% block style %}{%endblock %}
+
+</head>
+
+<body style="background-color: rgb(231, 198, 90) ;">
+    <div class="cabecalho">
+        <img src="{{ url_for('static', filename='Logo.png')}}" width="250px" height="90px" alt="//Logo">
+        <span>
+            <a class="btn btn-outline-warning" href="/">Home</a>
+            <a class="btn btn-outline-warning" href="/Procurados">Procurados</a>
+            <a class="btn btn-outline-warning" href="/Contatos">Entre em Contato</a>
+        </span>
+    </div>
+    <div class="linha"></div>
+
+    {% block conteudo %}
+    {% endblock %}
+    
+    <img class="roda" src="{{ url_for('static', filename='Toei_Animation_logo.png')}}" alt="One Piece Vol1">
+    <h1 class="frase">
+        We Are!
+    </h1>
+</body>
+
+</html>

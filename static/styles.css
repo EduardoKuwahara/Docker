@@ -1,0 +1,43 @@
+.titulo {
+    border: 2px solid rgb(0, 0, 0);
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.video {
+    text-align: center;
+}
+
+.media {
+    margin-top: 5%;
+    border: 2px solid black;
+    padding: 3%;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+
+.roda {
+    margin-left: 45%;
+    width: 10%;
+    height: 10%;
+}
+
+.cabecalho {
+    background-color: blue;
+    text-align: center;
+}
+
+.frase {
+    text-align: center;
+    font-size: larger; 
+    background-color: transparent;
+}
+
+@media (max-width:375px){
+    h1{
+        text-align: left;
+        background-color: aqua;
+    }  
+}

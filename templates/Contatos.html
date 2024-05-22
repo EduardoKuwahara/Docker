@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Contatos{% endblock %}
+{% block style %}<link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">{% endblock %}
+
+{% block conteudo %}
+
+    <div>
+        <h1 class="titulo">Entre em Contato:</h1>
+        <h2>Cadastre-se para mais novidades.</h2>
+        <form class="forms" action="/add" method="POST">
+            <div class="form-group">
+              <label for="exampleInputUser1">Usuário</label>
+              <input type="text" class="form-control" name="user_nome" placeholder="Seu nome de Usuário" required>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Endereço de email</label>
+              <input type="email" class="form-control" name="user_email" aria-describedby="emailHelp" placeholder="Seu email" required>
+              <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPhone1">Telefone</label>
+              <input type="text" class="form-control" name="user_tell" placeholder="Telefone" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+    {% endblock %}
+    
+
+
+
+
+
+
+
+

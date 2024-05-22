@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+{% endblock %}
+{% block conteudo %}
+<!-- Corpo da Pagina-->
+<div class="video">
+    <h1 class="titulo">One Piece is real...</h1>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/dM7x1PNZDo0?si=dEwvI7LdqI_8e573"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+<!--Texto Corrido-->
+<div class="media">
+    <img class="align-self-start mr-3" src="{{ url_for('static', filename='One_Piece_vol._01.jpg')}}" width="20%"
+        height="20%" alt="One Piece Vol1">
+    <div class="media-body">
+        <h5 class="mt-0">Sinopse</h5>
+        <p>O mundo de One Piece é povoado por humanos e muitas outras raças, como anões, homens-peixe e gigantes. É
+            coberto
+            por dois vastos oceanos, que são divididos por uma enorme cordilheira chamada Red Line; A Grand Line, um mar
+            que
+            corre perpendicularmente à Red Line, divide-os em quatro mares: North Blue, East Blue, West Blue e South
+            Blue.
+            Ao redor da Grand Line, estão duas regiões chamadas Calm Belts, semelhantes às latitudes dos cavalos, que
+            quase
+            não experimentam ventos ou correntes oceânicas e são o terreno fértil para enormes criaturas marinhas
+            chamadas
+            reis-dos-mares. Por isso, os Calm Belts são barreiras muito eficazes para quem tenta entrar na Grand Line.
+            No
+            entanto, navios da Marinha, membros de uma organização intergovernamental conhecida como Governo Mundial,
+            são
+            capazes de usar uma pedra de prisma-do-mar (em japonês: 海楼石, transl. Kairōseki) para mascarar sua presença
+            dos
+            reis-dos-mares e podem simplesmente passar pelos Calm Belts. Todos os outros navios são forçados a seguir
+            uma
+            rota mais perigosa, passando por uma montanha na primeira interseção da Grand Line e da Red Line, um sistema
+            de
+            canais conhecido como Reverse Mountain. A água do mar de cada um dos quatro mares sobe aquela montanha e se
+            funde no topo para fluir por um quinto canal e entrar na primeira metade da Grand Line, chamada Paraíso por
+            causa da comparação com a segunda metade.</p>
+    </div>
+</div>
+<div class="media">
+    <img class="align-self-start mr-3" src="{{ url_for('static', filename='Oda.jpg')}}" width="20%" height="20%"
+        alt="Imagem de exemplo genérica">
+    <div class="media-body">
+        <h5 class="mt-0">Biografia</h5>
+        <p> Enquanto criança, Oda foi inspirado por viquingues e aspirou se tornar um mangaka. Ainda novo, ele enviou um
+            personagem criado por ele mesmo chamado Pandaman para um mangá clássico de Yudetamago, Kinnukuman, que não
+            apenas foi utilizado em um capítulo do mangá, mas mais tarde retornou como figurante recorrente nos
+            trabalhos do
+            próprio Oda.
+
+            Com 17 anos de idade, inspirado por faroestes como Os Jovens Pistoleiros, Oda escreveu Wanted!, obra que
+            levou
+            cerca de 4 meses para ser concluída. Wanted! ganhou diversos prêmios, incluindo o segundo lugar no cobiçado
+            Prêmio Cultural Osamu Tezuka, rendendo a Oda ¥ 500.000, valor o qual ele dividiu com seus pais.[3]
+
+            Isso propiciou-lhe um emprego na revista Weekly Shonen Jump, onde inicialmente trabalhou como assistente da
+            série de Shinobu Kaitani Suizan Police Gang, logo em seguida indo trabalhar com Masaya Tokuhiro,
+            auxiliando-o
+            nos títulos Jungle King Tar-chan e Mizu no Tomodachi Kappaman, que lhe deu uma influência inesperada no seu
+            estilo artístico.
+
+            Aos 19 anos, ele trabalhou como assistente de ''mangaka'', juntamente a Hiroyuki Takei, criador de Shaman
+            King,
+            para Nobuhiro Watsuki no também famoso mangá Rurouni Kenshin onde se inspirou a fazer o famoso caçador de
+            recompensas Roronoa Zoro um dos espadachins de seu mangá. Durante esse período, ele desenhou duas histórias
+            de
+            pirataria curtas, chamadas "Romance Dawn", onde se inspirou para criar One Piece. Em 1997, One Piece
+            apareceu
+            pela primeira vez na revista Shonen Jump e rapidamente se tornou um dos mangás mais populares do Japão.
+
+            São notórias algumas homenagens feitas pelo autor a alguns ídolos refletidas no seu trabalho. Exemplos disso
+            são
+            nos nomes de personagens como Marshall D. Teach (o nome verdadeiro do rapper americado Eminem é Marshall
+            enquanto Teach é uma refêrencia ao Barba Negra da vida real). Há também outras referências aos seus ídolos
+            não
+            somente quanto à nomes, mas também aparências: o design, por exemplo, dos vilões de One Piece, Enel, Jango e
+            Spandam são, respectivamente, homenagens a Eminem, Michael Jackson e possivelmente ao Wrestler Mick Foley.
+        </p>
+    </div>
+</div>
+</div>
+
+<!--Rodapé-->
+
+{% endblock %}

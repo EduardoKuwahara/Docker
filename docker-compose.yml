@@ -1,0 +1,33 @@
+version: '3'
+services:
+  bd:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD="@D5d52811"
+    ports:
+      - "3307:3306"
+    volumes:
+      - bd-data:/var/lib/mysql
+      - ./init.sql:/docker-entryponit-initdb.d/init.sql
+    networks:
+      - internet
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping","-h", "localhost" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  app:
+    build: .
+    ports:
+      - '5005:5000'
+    depends_on:
+      bd: 
+        condition: service_healthy
+    networks:
+      - internet
+volumes:
+  bd-data:
+  
+networks:
+  internet:
+    driver: bridge
