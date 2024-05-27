@@ -1,23 +1,23 @@
-import  os
-from flask import Flask, redirect, render_template, request, url_for
-from flask_mysqldb import MySQL
+from flask import Flask, render_template, request, redirect, url_for
+import mysql.connector
 
 app = Flask(__name__)
 
-app.config['MYSQL_HOST'] = 'localhost' 
-app.config['MYSQL_USER'] = "root"
-app.config['MYSQL_PASSWORD'] = "@D5d52811"
-app.config['MYSQL_DB'] = "Desafio4"
+db_config={
+    'host': 'bd',
+    'user': 'edu',
+    'password': '1234',
+}
 
-mysql = MySQL(app)
-
+conn = mysql.connector.connect(**db_config)
 
 @app.route('/')
 def index():
-    cur = mysql.connection.cursor()
-    cur.execute("SELECT * FROM usuario")
-    desafio4 = cur.fetchall()
-    cur.close()
+    cursor = conn.cursor()
+    cursor.execute("USE Desafio4")
+    cursor.execute("SELECT * FROM usuario")
+    desafio4 = cursor.fetchall()
+    cursor.close()
     return render_template('index.html', desafio4=desafio4)
 
 @app.route('/Contatos')
@@ -34,20 +34,22 @@ def add_infor():
         user_nome = request.form['user_nome']
         user_email = request.form['user_email']
         user_tell = request.form['user_tell']
-        cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO usuario (user_nome, user_email, user_tell) VALUES (%s, %s ,%s )", (user_nome, user_email, user_tell))
-        mysql.connection.commit()
-        cur.close()
+        cursor = conn.cursor()
+        cursor.execute("USE Desafio4")
+        cursor.execute("INSERT INTO usuario (user_nome, user_email, user_tell) VALUES (%s, %s ,%s )", (user_nome, user_email, user_tell))
+        conn.commit()
+        cursor.close()
         return redirect(url_for('exibir_dados'))
 
 @app.route('/dados')
 def exibir_dados():
-    cur = mysql.connection.cursor()
-    cur.execute("SELECT * FROM usuario")
-    dado = cur.fetchall()
+    cursor = conn.cursor()
+    cursor.execute("USE Desafio4")
+    cursor.execute("SELECT * FROM usuario")
+    dado = cursor.fetchall()
     print (type(dado))
     print (dado)
-    cur.close()
+    cursor.close()
     return render_template('dados.html', dado=dado)
     
     
